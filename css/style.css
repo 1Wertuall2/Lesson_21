@@ -1,0 +1,442 @@
+@import url(https://fonts.googleapis.com/css?family=Arima:regular,700&display=swap);
+
+@charset "UTF-8";
+
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: 320px;
+}
+
+body {
+  color: #424551;
+  line-height: 1;
+  font-family: "Arima";
+  font-size: 1rem;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+button,
+textarea {
+  font-family: "Arima";
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  background-color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+.lock body {
+  overflow: hidden;
+  -ms-touch-action: none;
+      touch-action: none;
+  -ms-scroll-chaining: none;
+      overscroll-behavior: none;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+}
+
+@supports (overflow: clip) {
+  .wrapper {
+    overflow: clip;
+  }
+}
+
+.wrapper > main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.wrapper > * {
+  min-width: 0;
+}
+
+/*
+(i) Стили будут применяться ко 
+всем классам содержащим *__container
+Например header__container, main__container и т.д.
+Снипет (HTML): cnt
+*/
+
+[class*=__container] {
+  max-width: 76.875rem;
+  margin: 0 auto;
+  padding: 0 0.9375rem;
+}
+
+[class*=-ibg] {
+  position: relative;
+}
+
+[class*=-ibg] img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+[class*=-ibg_contain] img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.header__inner {
+  position: relative;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.header__title {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 50px 15px;
+  position: relative;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-right: 1.25rem;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.4ex;
+  line-height: 1.5em;
+  text-transform: uppercase;
+  font-size: 2.875rem;
+  text-shadow: 5px 5px 3px rgb(2, 3, 3);
+}
+
+.header__video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/*
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: rem(30);
+		height: rem(18);
+		z-index: 5;
+		@media (any-hover: none) {
+			cursor: default;
+		}
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			background-color: #000;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1));
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - rem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+*/
+
+.video {
+  position: relative;
+  z-index: 3;
+  background: -o-linear-gradient(34.05deg, rgb(156, 242, 197) 0%, rgb(65, 125, 113) 100%);
+  background: linear-gradient(55.95deg, rgb(156, 242, 197) 0%, rgb(65, 125, 113) 100%);
+  padding: 100px 100px;
+}
+
+.video__block {
+  text-align: center;
+  margin-bottom: 2.5em;
+}
+
+.video__title {
+  font-weight: 700;
+  margin-bottom: 0.4em;
+  letter-spacing: 0.8em;
+  color: rgb(110, 91, 91);
+}
+
+.video__subtitle {
+  font-size: 1.5rem;
+  letter-spacing: 0.2em;
+}
+
+.video__body {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+
+.video__inner {
+  border: 3px solid #000;
+  border-radius: 4px;
+}
+
+.video__item {
+  position: relative;
+  padding-bottom: 70%;
+}
+
+.video__item video,
+.video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.video__text {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  padding: 1.3em;
+}
+
+@media (min-width: 76.875em) {
+  .header__title {
+    padding-top: 8.125rem;
+  }
+
+  .header__title {
+    padding-left: 12.5rem;
+  }
+
+  .header__title {
+    padding-right: 12.5rem;
+  }
+
+  .header__title {
+    font-size: 2.875rem;
+  }
+
+  .video {
+    padding-left: 6.25rem;
+  }
+
+  .video {
+    padding-right: 6.25rem;
+  }
+
+  .video__title {
+    font-size: 2.625rem;
+  }
+}
+
+@media (max-width: 20em) {
+  .header__title {
+    padding-top: 5rem;
+  }
+
+  .header__title {
+    padding-left: 0.9375rem;
+  }
+
+  .header__title {
+    padding-right: 0.9375rem;
+  }
+
+  .header__title {
+    font-size: 2rem;
+  }
+
+  .video {
+    padding-left: 0.625rem;
+  }
+
+  .video {
+    padding-right: 0.625rem;
+  }
+
+  .video__title {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 20em) and (max-width: 76.875em) {
+@supports (padding-top: clamp( 5rem , 3.9010989011rem  +  5.4945054945vw , 8.125rem )) {
+    .header__title {
+      padding-top: clamp( 5rem , 3.9010989011rem  +  5.4945054945vw , 8.125rem );
+    }
+}
+
+@supports not (padding-top: clamp( 5rem , 3.9010989011rem  +  5.4945054945vw , 8.125rem )) {
+    .header__title {
+      padding-top: calc(5rem + 3.125 * (100vw - 20rem) / 56.875);
+    }
+}
+
+@supports (padding-left: clamp( 0.9375rem , -3.1284340659rem  +  20.3296703297vw , 12.5rem )) {
+    .header__title {
+      padding-left: clamp( 0.9375rem , -3.1284340659rem  +  20.3296703297vw , 12.5rem );
+    }
+}
+
+@supports not (padding-left: clamp( 0.9375rem , -3.1284340659rem  +  20.3296703297vw , 12.5rem )) {
+    .header__title {
+      padding-left: calc(0.9375rem + 11.5625 * (100vw - 20rem) / 56.875);
+    }
+}
+
+@supports (padding-right: clamp( 0.9375rem , -3.1284340659rem  +  20.3296703297vw , 12.5rem )) {
+    .header__title {
+      padding-right: clamp( 0.9375rem , -3.1284340659rem  +  20.3296703297vw , 12.5rem );
+    }
+}
+
+@supports not (padding-right: clamp( 0.9375rem , -3.1284340659rem  +  20.3296703297vw , 12.5rem )) {
+    .header__title {
+      padding-right: calc(0.9375rem + 11.5625 * (100vw - 20rem) / 56.875);
+    }
+}
+
+@supports (font-size: clamp( 2rem , 1.6923076923rem  +  1.5384615385vw , 2.875rem )) {
+    .header__title {
+      font-size: clamp( 2rem , 1.6923076923rem  +  1.5384615385vw , 2.875rem );
+    }
+}
+
+@supports not (font-size: clamp( 2rem , 1.6923076923rem  +  1.5384615385vw , 2.875rem )) {
+    .header__title {
+      font-size: calc(2rem + 0.875 * (100vw - 20rem) / 56.875);
+    }
+}
+
+@supports (padding-left: clamp( 0.625rem , -1.353021978rem  +  9.8901098901vw , 6.25rem )) {
+    .video {
+      padding-left: clamp( 0.625rem , -1.353021978rem  +  9.8901098901vw , 6.25rem );
+    }
+}
+
+@supports not (padding-left: clamp( 0.625rem , -1.353021978rem  +  9.8901098901vw , 6.25rem )) {
+    .video {
+      padding-left: calc(0.625rem + 5.625 * (100vw - 20rem) / 56.875);
+    }
+}
+
+@supports (padding-right: clamp( 0.625rem , -1.353021978rem  +  9.8901098901vw , 6.25rem )) {
+    .video {
+      padding-right: clamp( 0.625rem , -1.353021978rem  +  9.8901098901vw , 6.25rem );
+    }
+}
+
+@supports not (padding-right: clamp( 0.625rem , -1.353021978rem  +  9.8901098901vw , 6.25rem )) {
+    .video {
+      padding-right: calc(0.625rem + 5.625 * (100vw - 20rem) / 56.875);
+    }
+}
+
+@supports (font-size: clamp( 2rem , 1.7802197802rem  +  1.0989010989vw , 2.625rem )) {
+    .video__title {
+      font-size: clamp( 2rem , 1.7802197802rem  +  1.0989010989vw , 2.625rem );
+    }
+}
+
+@supports not (font-size: clamp( 2rem , 1.7802197802rem  +  1.0989010989vw , 2.625rem )) {
+    .video__title {
+      font-size: calc(2rem + 0.625 * (100vw - 20rem) / 56.875);
+    }
+}
+}
